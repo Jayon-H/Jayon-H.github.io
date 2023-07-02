@@ -1,0 +1,644 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/blog.png">
+  <link rel="icon" href="/img/blog.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Jayon-H">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="C程序主要组成部分：预处理器指令函数变量语句 &amp; 表达式注释C Helllo World实例12345678#include&lt;stdio.h&gt; int main() &amp;#123;     int x,y,z;     &#x2F;*我的第一个C语言程序*&#x2F;     printf(&quot;Hello,world&quot;);     return 0; &amp;#125; 实例解析：1.程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言学习（二）----基本程序结构">
+<meta property="og:url" content="http://example.com/2023/01/27/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89-%E5%9F%BA%E6%9C%AC%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="Jayon&#39;s Blog">
+<meta property="og:description" content="C程序主要组成部分：预处理器指令函数变量语句 &amp; 表达式注释C Helllo World实例12345678#include&lt;stdio.h&gt; int main() &amp;#123;     int x,y,z;     &#x2F;*我的第一个C语言程序*&#x2F;     printf(&quot;Hello,world&quot;);     return 0; &amp;#125; 实例解析：1.程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-27T07:10:22.000Z">
+<meta property="article:modified_time" content="2023-04-30T14:04:21.703Z">
+<meta property="article:author" content="Jayon-H">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>C语言学习（二）----基本程序结构 - Jayon&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":85,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Jayon-H</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/startpage.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="C语言学习（二）----基本程序结构"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-01-27 15:10" pubdate>
+          2023年1月27日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">C语言学习（二）----基本程序结构</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="C程序主要组成部分："><a href="#C程序主要组成部分：" class="headerlink" title="C程序主要组成部分："></a>C程序主要组成部分：</h1><h3 id="预处理器指令"><a href="#预处理器指令" class="headerlink" title="预处理器指令"></a>预处理器指令</h3><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h3 id="语句-amp-表达式"><a href="#语句-amp-表达式" class="headerlink" title="语句 &amp; 表达式"></a>语句 &amp; 表达式</h3><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><h1 id="C-Helllo-World实例"><a href="#C-Helllo-World实例" class="headerlink" title="C Helllo World实例"></a>C Helllo World实例</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br> <span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br> &#123;<br>     <span class="hljs-type">int</span> x,y,z;<br>     <span class="hljs-comment">/*我的第一个C语言程序*/</span><br>     <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello,world&quot;</span>);<br>     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br> &#125;<br></code></pre></td></tr></table></figure>
+<h2 id="实例解析："><a href="#实例解析：" class="headerlink" title="实例解析："></a>实例解析：</h2><h3 id="1-程序的第一行-include-lt-stdio-h-gt-是预处理器指令，告诉-C-编译器在实际编译之前要包含-stdio-h-文件。"><a href="#1-程序的第一行-include-lt-stdio-h-gt-是预处理器指令，告诉-C-编译器在实际编译之前要包含-stdio-h-文件。" class="headerlink" title="1.程序的第一行  #include &lt;stdio.h&gt; 是预处理器指令，告诉 C 编译器在实际编译之前要包含 stdio.h 文件。"></a>1.程序的第一行 <code> #include &lt;stdio.h&gt;</code> 是预处理器指令，告诉 C 编译器在实际编译之前要包含 stdio.h 文件。</h3><h3 id="2-下一行int-main-是主函数，程序从这里开始执行。"><a href="#2-下一行int-main-是主函数，程序从这里开始执行。" class="headerlink" title="2.下一行int main()是主函数，程序从这里开始执行。"></a>2.下一行<code>int main()</code>是主函数，程序从这里开始执行。</h3><h3 id="3-下一行-x2F-…-x2F-将会被编译器忽略，这里放置程序的注释内容。它们被称为程序的注释。"><a href="#3-下一行-x2F-…-x2F-将会被编译器忽略，这里放置程序的注释内容。它们被称为程序的注释。" class="headerlink" title="3.下一行 &#x2F;*…*&#x2F; 将会被编译器忽略，这里放置程序的注释内容。它们被称为程序的注释。"></a>3.下一行 &#x2F;*…*&#x2F; 将会被编译器忽略，这里放置程序的注释内容。它们被称为程序的注释。</h3><h3 id="4-下一行-printf-是-C-中另一个可用的函数，会在屏幕上显示消息-“Hello-World-”。"><a href="#4-下一行-printf-是-C-中另一个可用的函数，会在屏幕上显示消息-“Hello-World-”。" class="headerlink" title="4.下一行 printf(...) 是 C 中另一个可用的函数，会在屏幕上显示消息 “Hello, World!”。"></a>4.下一行<code> printf(...)</code> 是 C 中另一个可用的函数，会在屏幕上显示消息 “Hello, World!”。</h3><h3 id="5-下一行return-0-终止-main-函数，并返回值-0。"><a href="#5-下一行return-0-终止-main-函数，并返回值-0。" class="headerlink" title="5.下一行return 0;终止 main() 函数，并返回值 0。"></a>5.下一行<code>return 0;</code>终止 main() 函数，并返回值 0。</h3><h1 id="详细结构解析："><a href="#详细结构解析：" class="headerlink" title="详细结构解析："></a>详细结构解析：</h1><h2 id="1-main函数"><a href="#1-main函数" class="headerlink" title="1.main函数"></a>1.main函数</h2><h3 id="在每个-C-语言程序中都需要包含一个-main-函数。这是程序的主体，每个可以单独执行的-C-语言程序都要有一个-mian-函数作为程序的入口程序，如同每个建筑物都会有一个主要的出入口一样。"><a href="#在每个-C-语言程序中都需要包含一个-main-函数。这是程序的主体，每个可以单独执行的-C-语言程序都要有一个-mian-函数作为程序的入口程序，如同每个建筑物都会有一个主要的出入口一样。" class="headerlink" title="在每个 C 语言程序中都需要包含一个 main 函数。这是程序的主体，每个可以单独执行的 C 语言程序都要有一个 mian 函数作为程序的入口程序，如同每个建筑物都会有一个主要的出入口一样。"></a>在每个 C 语言程序中都需要包含一个 main 函数。这是程序的主体，每个可以单独执行的 C 语言程序都要有一个 mian 函数作为程序的入口程序，如同每个建筑物都会有一个主要的出入口一样。</h3><h3 id="这个函数由函数名后的一对圆括号，以及在圆括号后面的一对大括号，和包含在大括号内的一组程序代码构成。这个圆括号中可以放置需要在程序启动时传入-main-函数的参数。可以是一个，或者多个参数。而在这之后的大括号中的部分，就是这个程序的主体部分。里面是可以执行的程序语句或者注释等相关内容。"><a href="#这个函数由函数名后的一对圆括号，以及在圆括号后面的一对大括号，和包含在大括号内的一组程序代码构成。这个圆括号中可以放置需要在程序启动时传入-main-函数的参数。可以是一个，或者多个参数。而在这之后的大括号中的部分，就是这个程序的主体部分。里面是可以执行的程序语句或者注释等相关内容。" class="headerlink" title="这个函数由函数名后的一对圆括号，以及在圆括号后面的一对大括号，和包含在大括号内的一组程序代码构成。这个圆括号中可以放置需要在程序启动时传入 main 函数的参数。可以是一个，或者多个参数。而在这之后的大括号中的部分，就是这个程序的主体部分。里面是可以执行的程序语句或者注释等相关内容。"></a>这个函数由函数名后的一对圆括号，以及在圆括号后面的一对大括号，和包含在大括号内的一组程序代码构成。这个圆括号中可以放置需要在程序启动时传入 main 函数的参数。可以是一个，或者多个参数。而在这之后的大括号中的部分，就是这个程序的主体部分。里面是可以执行的程序语句或者注释等相关内容。</h3><blockquote>
+<p>Tips：按照 C 语言的国际标准，这个函数是有一个返回值的，而且类型只能是 int 类型。但是在一些旧的书籍中，会有 void 的返回类型写法。这个写法在我目前遇到的编译器中不会有问题。但是切记，这不是 C 语言标准写法，在某些新的编译器中会产生错误。程序是一个需要极其遵守规则的领域，小聪明总会付出沉重的代价。</p>
+</blockquote>
+<h2 id="2-include指令"><a href="#2-include指令" class="headerlink" title="2.#include指令"></a>2.<code>#include</code>指令</h2><h3 id="为了调用标准-IO-库中提供的-printf-这个函数。我们这里使用了-include-lt-stdio-h-gt-，这个语句代表了我们要在程序中使用-STDIO-库中提供的函数，我们也会把-stdio-h-这样的文件称之为头文件。"><a href="#为了调用标准-IO-库中提供的-printf-这个函数。我们这里使用了-include-lt-stdio-h-gt-，这个语句代表了我们要在程序中使用-STDIO-库中提供的函数，我们也会把-stdio-h-这样的文件称之为头文件。" class="headerlink" title="为了调用标准 IO 库中提供的 printf 这个函数。我们这里使用了 # include &lt;stdio.h&gt; ，这个语句代表了我们要在程序中使用 STDIO 库中提供的函数，我们也会把 stdio.h 这样的文件称之为头文件。"></a>为了调用标准 IO 库中提供的 printf 这个函数。我们这里使用了 <code># include &lt;stdio.h&gt;</code> ，这个语句代表了我们要在程序中使用 STDIO 库中提供的函数，我们也会把 <code>stdio.h</code> 这样的文件称之为头文件。</h3><h3 id="头文件里面主要包含着函数的声明。这就可以方便我们重复使用别人已经实现了的程序，能使用别人的，一般都不要自己来实现，这叫做不要自己来发明轮子。更深入的讲一点，其实这个是一个预处理指令。这个指令会在程序编译时，指引编译器找到我们所需要引用的内容。"><a href="#头文件里面主要包含着函数的声明。这就可以方便我们重复使用别人已经实现了的程序，能使用别人的，一般都不要自己来实现，这叫做不要自己来发明轮子。更深入的讲一点，其实这个是一个预处理指令。这个指令会在程序编译时，指引编译器找到我们所需要引用的内容。" class="headerlink" title="头文件里面主要包含着函数的声明。这就可以方便我们重复使用别人已经实现了的程序，能使用别人的，一般都不要自己来实现，这叫做不要自己来发明轮子。更深入的讲一点，其实这个是一个预处理指令。这个指令会在程序编译时，指引编译器找到我们所需要引用的内容。"></a>头文件里面主要包含着函数的声明。这就可以方便我们重复使用别人已经实现了的程序，能使用别人的，一般都不要自己来实现，这叫做不要自己来发明轮子。更深入的讲一点，其实这个是一个预处理指令。这个指令会在程序编译时，指引编译器找到我们所需要引用的内容。</h3><h2 id="3-int-x-y-z"><a href="#3-int-x-y-z" class="headerlink" title="3.int x,y,z;"></a>3.<code>int x,y,z;</code></h2><h3 id="这一句是声明了-3-个整数型的变量。在-C-语言中，变量要先通过声明类型，然后才能使用。这一点和某些编程语言有点不太一样。不同的变量类型在-C-语言中会对应不同的内存分配大小。"><a href="#这一句是声明了-3-个整数型的变量。在-C-语言中，变量要先通过声明类型，然后才能使用。这一点和某些编程语言有点不太一样。不同的变量类型在-C-语言中会对应不同的内存分配大小。" class="headerlink" title="这一句是声明了 3 个整数型的变量。在 C 语言中，变量要先通过声明类型，然后才能使用。这一点和某些编程语言有点不太一样。不同的变量类型在 C 语言中会对应不同的内存分配大小。"></a>这一句是声明了 3 个整数型的变量。在 C 语言中，变量要先通过声明类型，然后才能使用。这一点和某些编程语言有点不太一样。不同的变量类型在 C 语言中会对应不同的内存分配大小。</h3><h2 id="4-printf函数"><a href="#4-printf函数" class="headerlink" title="4.printf函数"></a>4.<code>printf</code>函数</h2><h3 id="除了上面所讲的部分外，其余的部分是程序语句。-printf-函数是向标准终端中输出格式化的文本。-return-函数是在程序执行到此结束程序并返回其所携带的参数数值。-语句一般是功能函数与分支结构的组合。程序会根据条件的变化来执行相应的操作，最终计算出我们需要的结果。而所谓-bug-其实就是我们预想的结果和程序最终呈现给我们的结果不一致而已。"><a href="#除了上面所讲的部分外，其余的部分是程序语句。-printf-函数是向标准终端中输出格式化的文本。-return-函数是在程序执行到此结束程序并返回其所携带的参数数值。-语句一般是功能函数与分支结构的组合。程序会根据条件的变化来执行相应的操作，最终计算出我们需要的结果。而所谓-bug-其实就是我们预想的结果和程序最终呈现给我们的结果不一致而已。" class="headerlink" title="除了上面所讲的部分外，其余的部分是程序语句。 printf 函数是向标准终端中输出格式化的文本。 return 函数是在程序执行到此结束程序并返回其所携带的参数数值。 语句一般是功能函数与分支结构的组合。程序会根据条件的变化来执行相应的操作，最终计算出我们需要的结果。而所谓 bug 其实就是我们预想的结果和程序最终呈现给我们的结果不一致而已。"></a>除了上面所讲的部分外，其余的部分是程序语句。 <code>printf</code> 函数是向标准终端中输出格式化的文本。 <code>return</code> 函数是在程序执行到此结束程序并返回其所携带的参数数值。 语句一般是功能函数与分支结构的组合。程序会根据条件的变化来执行相应的操作，最终计算出我们需要的结果。而所谓 bug 其实就是我们预想的结果和程序最终呈现给我们的结果不一致而已。</h3><h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><h2 id="C-语言程序是由一个个函数组成的，其中唯一的主函数叫做-main。它是程序的入口，负责组织整个程序。"><a href="#C-语言程序是由一个个函数组成的，其中唯一的主函数叫做-main。它是程序的入口，负责组织整个程序。" class="headerlink" title="C 语言程序是由一个个函数组成的，其中唯一的主函数叫做 main。它是程序的入口，负责组织整个程序。"></a>C 语言程序是由一个个函数组成的，其中唯一的主函数叫做 main。它是程序的入口，负责组织整个程序。</h2><h2 id="每个函数包含主函数都是由函数返回值，函数名称，函数传入变量，内部的变量与常量，被调用的外部函数等组成。只不过-main-函数的名称特殊了一点而已。"><a href="#每个函数包含主函数都是由函数返回值，函数名称，函数传入变量，内部的变量与常量，被调用的外部函数等组成。只不过-main-函数的名称特殊了一点而已。" class="headerlink" title="每个函数包含主函数都是由函数返回值，函数名称，函数传入变量，内部的变量与常量，被调用的外部函数等组成。只不过 main 函数的名称特殊了一点而已。"></a>每个函数包含主函数都是由函数返回值，函数名称，函数传入变量，内部的变量与常量，被调用的外部函数等组成。只不过 main 函数的名称特殊了一点而已。</h2><blockquote>
+<p>摘自<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-program-structure.html">菜鸟教程</a>和<a target="_blank" rel="noopener" href="http://www.imooc.com/wiki/clesson/structure.html">慕课网</a></p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/C%E8%AF%AD%E8%A8%80/" class="category-chain-item">C语言</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>C语言学习（二）----基本程序结构</div>
+      <div>http://example.com/2023/01/27/C语言学习（二）-基本程序结构/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jayon-H</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年1月27日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/04/30/ArchLinux%E4%B8%AD%E6%96%87%E5%8C%96/" title="ArchLinux中文化">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">ArchLinux中文化</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/20/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="C语言学习（一）----环境搭建">
+                        <span class="hidden-mobile">C语言学习（一）----环境搭建</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+  <!--网易云音乐外链-->
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=2013726927&auto=1&height=66"></iframe>
+
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <span>HJY</span> <i class="iconfont icon-love"></i> <span>LBJ</span> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+<!--动态线条背景-->
+<script type="text/javascript"
+color="0,0,0" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
