@@ -30,8 +30,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Python--速成应付新生赛</title>
-    <url>/2026/10/17/Python-%E9%80%9F%E6%88%90%E5%BA%94%E4%BB%98%E6%96%B0%E7%94%9F%E8%B5%9B/</url>
+    <title>Python速成（应付新生赛）</title>
+    <url>/2026/10/17/Python%E9%80%9F%E6%88%90%EF%BC%88%E5%BA%94%E4%BB%98%E6%96%B0%E7%94%9F%E8%B5%9B%EF%BC%89/</url>
     <content><![CDATA[<p>前言：最近都是跟着cs50在自学基础，但是又对学校ACM校队组织的新生赛感兴趣，想试一下，怎料这种竞赛都是推荐用C++，跟着cs50我都是学了基础的c以及接触python，尝试过转C++，但是时间又不是很够（实际上新生线上赛只剩3天就结束了），我从cs50那里已经充分感受到python的简洁易懂，于是乎，我决定先用python应付一下新生赛（这种比赛总不可能要求很高吧，我那浅陋的python储备应该够用），为了防止爆零，我叫大肥鱼总结了一些模板给我记忆学习（所以正文部分是ai生成🥰）。</p>
 <h2 id="一、输入模板"><a href="#一、输入模板" class="headerlink" title="一、输入模板"></a>一、输入模板</h2><h3 id="1-读一个整数"><a href="#1-读一个整数" class="headerlink" title="1. 读一个整数"></a>1. 读一个整数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())  <span class="comment"># 读一行，转成整数</span></span><br><span class="line"><span class="built_in">print</span>(n)  <span class="comment"># 输出</span></span><br></pre></td></tr></table></figure>
 
